@@ -1,5 +1,4 @@
 from collections import deque
-import copy
 
 def check_area(arr):
     queue = deque()
