@@ -17,8 +17,6 @@ def union(a, b):
     aRoot = find(a)
     bRoot = find(b)
     if aRoot == bRoot:
-        parents[a] = aRoot
-        parents[b] = bRoot
         return False
 
     parents[aRoot] = bRoot
