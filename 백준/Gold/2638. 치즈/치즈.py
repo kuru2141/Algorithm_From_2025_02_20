@@ -19,7 +19,7 @@ air_queue = deque()
 melt_cheeze = deque()
 melt_cheeze.append((0, 0))
 
-time = -1 # 제거를 새로운 루프를 들어갈 때 하기 때문에 time이 하나 더 세짐
+time = -1 # 제거를 새로운 루프로 들어갈 때 하기 때문에 time이 하나 더 세짐
 
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
