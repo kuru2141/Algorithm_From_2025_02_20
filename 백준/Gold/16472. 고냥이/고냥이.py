@@ -1,14 +1,9 @@
 from collections import deque
 
 N = int(input())
-
 word = input()
-
-
 arr_queue = deque([e for e in word])
-
 max_conti = 0
-
 input_queue = deque()
 
 idx_list = [0]
