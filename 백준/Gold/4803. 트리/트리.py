@@ -47,7 +47,6 @@ while True:
     is_cycle = 0
 
     for i in range(1, n + 1):
-        list_arr = [[] for _ in range(n + 1)]
         dfs(i)
         k += 1
 
@@ -62,7 +61,6 @@ while True:
             list_arr.append(tmp)
 
     for ele in list_arr:
-
         visit_v = []
         check = 0
         check_cycle(ele[0], 0)
