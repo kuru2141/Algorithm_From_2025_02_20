@@ -17,9 +17,9 @@ while length < N:
             left = i + 1
             right = i + length - 1
 
-            if checkDp(left, right):
-                dp[i][i + length] = 1            
-
+            if not (left < right and dp[left][right] == 0):
+                dp[i][i + length] = 1
+                
     length += 1
 
 M = int(input())
