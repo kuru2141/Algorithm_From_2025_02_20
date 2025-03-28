@@ -10,7 +10,6 @@ def solution(n, stations, w):
 
     for i in range(len(queue) - 1):
         tmp = math.ceil((queue[i + 1] - queue[i] -1 - 2 * w) / (2 * w + 1))
-        if tmp > 0:
-            answer += tmp
+        answer += tmp
             
     return answer
