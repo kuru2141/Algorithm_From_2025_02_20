@@ -1,10 +1,20 @@
-from itertools import combinations
+def combi(depth, M):
+    if len(numbers) == M:
+        for ele in numbers:
+            print(ele, end = ' ')
+        print()
+        return
+    
+    if depth > N - 1:
+        return
+        
+    numbers.append(arr[depth])
+    combi(depth + 1, M)
+    numbers.remove(arr[depth])
+    combi(depth + 1, M)
 
 N, M = map(int, input().split())
+arr = [(i + 1) for i in range(N)]
 
-arr = [i for i in range(1, N + 1)]
-
-for ele in combinations(arr, M):
-    for e in ele:
-        print(e, end = ' ')
-    print()
+numbers = []
+combi(0, M)
