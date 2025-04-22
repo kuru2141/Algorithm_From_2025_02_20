@@ -6,7 +6,6 @@ def solution(s):
 
     for i in range(1, len(s) // 2 + 1):
         tmp = ''
-        dic = dict()
         new_s = s
         
         while new_s:
@@ -23,6 +22,8 @@ def solution(s):
                     else:
                         tmp += str(k) + word
                     break
+                
             new_s = new_s[t:]
         result.append(len(tmp))
+        
     return min(result)
