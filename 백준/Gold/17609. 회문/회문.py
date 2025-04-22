@@ -18,16 +18,12 @@ for _ in range(T):
 
         while i < j:
             if word[i] != word[j]:
-                if check == 1:
-                    c = 1
-                    result.append(2)
-                    break
+                if check != 1:
+                    if word[i] == word[j - 1]:
+                        queue.append((word, 1, i, j - 1))
 
-                if word[i] == word[j - 1]:
-                    queue.append((word, 1, i, j - 1))
-
-                if word[i + 1] == word[j]:
-                    queue.append((word, 1, i + 1, j))
+                    if word[i + 1] == word[j]:
+                        queue.append((word, 1, i + 1, j))
 
                 c = 1
                 result.append(2)
