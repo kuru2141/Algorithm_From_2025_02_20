@@ -1,13 +1,6 @@
 import sys
 input = sys.stdin.readline
 
-def calculator(num1, num2, cal):
-    if cal == '+':
-        return num1 + num2
-
-    if cal == '-':
-        return num1 - num2
-    
 sentence = input().strip()
 num = []
 cal = []
