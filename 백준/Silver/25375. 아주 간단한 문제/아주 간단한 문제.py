@@ -1,11 +1,6 @@
 import sys, math
 input = sys.stdin.readline
 
-def gcd(x, y):
-    while y != 0:
-        x, y = y, x % y
-    return x
-
 Q = int(input())
 
 for _ in range(Q):
