@@ -27,6 +27,7 @@ def solution(n, k, enemy):
                     heapq.heappush(lst, x)
                 cnt += 1
             else:
+                heapq.heappush(lst, tmp)
                 break
             
-    return min(len(lst) + cnt + 1, len(enemy))
+    return min(len(lst) + cnt, len(enemy))
