@@ -1,39 +1,30 @@
 import sys
 input = sys.stdin.readline
 
-def do(x, stack):
-    
-    if x[0] == 'push':
-        stack.append(int(x[1]))
-    
-    elif x[0] == 'pop':
-        if not stack:
-            print(-1)
-        else:
-            print(stack[-1])
-            stack = stack[:-1]
-
-    elif x[0] == 'size':
-        print(len(stack))
-
-    elif x[0] == 'empty':
-        if stack:
-            print(0)
-        else:
-            print(1)
-
-    elif x[0] == 'top':
-        if not stack:
-            print(-1)
-        else:
-            print(stack[-1])
-
-    return stack
-
 N = int(input())
-stack = []
+arr = []
 
 for _ in range(N):
-    tmp = list(input().split())
-    
-    stack = do(tmp, stack)
+    command = list(map(str, input().split()))
+
+    if command[0] == 'push':
+        arr.append(int(command[1]))
+    elif command[0] == 'top':
+        if not arr:
+            print(-1)
+        else:
+            print(arr[-1])
+    elif command[0] == 'size':
+        print(len(arr))
+    elif command[0] == 'empty':
+        if not arr:
+            print(1)
+        else:
+            print(0)
+    elif command[0] == 'pop':
+        if not arr:
+            print(-1)
+        else:
+            print(arr.pop())
+    else:
+        print(-1)
