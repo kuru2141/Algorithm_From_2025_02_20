@@ -1,41 +1,49 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
-def dfs(v):
-    for ele in graph[v]:
-        if not visited[ele]:
-            print(ele, end = ' ')
-            visited[ele] = 1
-            dfs(ele)
+def dfs(V):
+    for i in arr[V]:
+        if not visited[i]:
+            print(i, end = ' ')
+            visited[i] = 1
+            dfs(i)
+
+def bfs(V):
+    queue = deque()
+    queue.append(V)
     
+    while queue:
+        x = queue.popleft()
 
+        for i in arr[x]:
+            if not visited[i]:
+                print(i, end = ' ')
+                queue.append(i)
+                visited[i] = 1
+    
 N, M, V = map(int, input().split())
-graph = [[] for _ in range(N + 1)]
-graph[0].append(V)
+
+arr = [[] for _ in range(N + 1)]
+arr[0].append(V)
+
 
 for _ in range(M):
     a, b = map(int, input().split())
-    graph[a].append(b)
-    graph[b].append(a)
+    arr[a].append(b)
+    arr[b].append(a)
 
-for ele in graph:
+for ele in arr:
     ele.sort()
 
-visited = [0] * (N + 1)
-visited[0] = 1
+visited = [0 for _ in range(N + 1)]
+visited[V] = 1
+print(V, end = ' ')
+dfs(V)
 
-dfs(0)
 print()
 
-queue = deque()
-queue.append(0)
-
-visited = [0] * (N + 1)
-visited[0] = 1
-
-while queue:
-    v = queue.popleft()
-    for ele in graph[v]:
-        if not visited[ele]:
-            print(ele, end = ' ')
-            visited[ele] = 1
-            queue.append(ele)
+visited = [0 for _ in range(N + 1)]
+visited[V] = 1
+print(V, end = ' ')
+bfs(V)
